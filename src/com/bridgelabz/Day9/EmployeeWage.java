@@ -10,7 +10,12 @@ public class EmployeeWage {
     static final int WORKING_DAYS_PER_MONTH = 20;
     static final int WORKING_HOURS_PER_MONTH = 100;
 
-    void employeeWage(int dailyWages, int wagesofMonth, int workingDay, int day, int totalWorkingHoursOfMonth){
+    void employeeWage(){
+        int dailyWages = 0;
+        int wagesofMonth = 0;
+        int workingDay = 1;
+        int day = 1;
+        int totalWorkingHoursOfMonth = 0;
         while (workingDay <= WORKING_DAYS_PER_MONTH && totalWorkingHoursOfMonth <= WORKING_HOURS_PER_MONTH){
             int attendance = (int) Math.floor(Math.random()*10)%3;
             switch (attendance){
@@ -42,13 +47,8 @@ public class EmployeeWage {
 
     public static void main(String[] args) {
         System.out.println("Welcome to Employee Wage Problem::");
-        int dailyWages = 0;
-        int wagesofMonth = 0;
-        int workingDay = 1;
-        int day = 1;
-        int totalWorkingHoursOfMonth = 0;
         EmployeeWage employeeWage = new EmployeeWage();
-        employeeWage.employeeWage(dailyWages,wagesofMonth,workingDay,day,totalWorkingHoursOfMonth);
+        employeeWage.employeeWage();
 
     }
 }
