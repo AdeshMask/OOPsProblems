@@ -2,36 +2,36 @@ package com.bridgelabz.Day9;
 
 public class EmployeeWage {
 
-    static final int WAGE_PER_HOUR = 20;
-    static final int FULL_DAY_HOURS = 8;
-    static final int PART_TIME_HOURS = 4;
+    int wagesPerHour;
+    int fullDayHours;
+    int partTimeHours;
     static final int IS_PART_TIME = 0;
     static final int IS_FULL_TIME = 1;
-    static final int WORKING_DAYS_PER_MONTH = 20;
-    static final int WORKING_HOURS_PER_MONTH = 100;
+    int workingDaysperMonth;
+    int workingHoursPeerMonth;
 
-    void employeeWage(){
+    void empWage(int wagesPerHour, int fullDayHours, int partTimeHours, int workingDaysperMonth,int workingHoursPeerMonth){
         int dailyWages = 0;
         int wagesofMonth = 0;
         int workingDay = 1;
         int day = 1;
         int totalWorkingHoursOfMonth = 0;
-        while (workingDay <= WORKING_DAYS_PER_MONTH && totalWorkingHoursOfMonth <= WORKING_HOURS_PER_MONTH){
+        while (workingDay <= workingDaysperMonth && totalWorkingHoursOfMonth <= workingHoursPeerMonth){
             int attendance = (int) Math.floor(Math.random()*10)%3;
             switch (attendance){
                 case IS_PART_TIME:
                     System.out.println("Day "+day+" Half day");
-                    dailyWages = WAGE_PER_HOUR * PART_TIME_HOURS;
+                    dailyWages = wagesPerHour * partTimeHours;
                     System.out.println("Wages of the day: "+dailyWages);
                     wagesofMonth = dailyWages + wagesofMonth;
-                    totalWorkingHoursOfMonth = totalWorkingHoursOfMonth + PART_TIME_HOURS;
+                    totalWorkingHoursOfMonth = totalWorkingHoursOfMonth + partTimeHours;
                     break;
                 case IS_FULL_TIME:
                     System.out.println("Day "+day+" present");
-                    dailyWages = WAGE_PER_HOUR * FULL_DAY_HOURS;
+                    dailyWages = wagesPerHour * fullDayHours;
                     System.out.println("Wages of the day: "+dailyWages);
                     wagesofMonth = dailyWages + wagesofMonth;
-                    totalWorkingHoursOfMonth = totalWorkingHoursOfMonth + FULL_DAY_HOURS;
+                    totalWorkingHoursOfMonth = totalWorkingHoursOfMonth + fullDayHours;
                     break;
                 default:
                     System.out.println("Day "+day+" Absent");
@@ -47,8 +47,19 @@ public class EmployeeWage {
 
     public static void main(String[] args) {
         System.out.println("Welcome to Employee Wage Problem::");
-        EmployeeWage employeeWage = new EmployeeWage();
-        employeeWage.employeeWage();
+        System.out.println();
+        System.out.println("x-x-x-x-x-x-x- Company 1 data -x-x-x-x-x-x-x");
+        EmployeeWage employeeWage1 = new EmployeeWage();
+        employeeWage1.empWage(20,8,4,20,100);
+        System.out.println();
+        System.out.println("x-x-x-x-x-x-x- Company 2 data -x-x-x-x-x-x-x");
+        EmployeeWage employeeWage2 = new EmployeeWage();
+        employeeWage2.empWage(24,8,4,22,120);
+        System.out.println();
+        System.out.println("x-x-x-x-x-x-x- Company 3 data -x-x-x-x-x-x-x");
+        EmployeeWage employeeWage3 = new EmployeeWage();
+        employeeWage3.empWage(18,8,4,18,80);
+
 
     }
 }
