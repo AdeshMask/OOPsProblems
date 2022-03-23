@@ -8,6 +8,7 @@ public class EmployeeWage {
     static final int IS_PART_TIME = 0;
     static final int IS_FULL_TIME = 1;
     static final int WORKING_DAYS_PER_MONTH = 20;
+    static final int WORKING_HOURS_PER_MONTH = 100;
 
     public static void main(String[] args) {
         System.out.println("Welcome to Employee Wage Problem::");
@@ -15,7 +16,8 @@ public class EmployeeWage {
         int wagesofMonth = 0;
         int workingDay = 1;
         int day = 1;
-        while (workingDay <= WORKING_DAYS_PER_MONTH){
+        int totalWorkingHoursOfMonth = 0;
+        while (workingDay <= WORKING_DAYS_PER_MONTH && totalWorkingHoursOfMonth <= WORKING_HOURS_PER_MONTH){
         int attendance = (int) Math.floor(Math.random()*10)%3;
         switch (attendance){
             case IS_PART_TIME:
@@ -23,12 +25,14 @@ public class EmployeeWage {
                 dailyWages = WAGE_PER_HOUR * PART_TIME_HOURS;
                 System.out.println("Wages of the day: "+dailyWages);
                 wagesofMonth = dailyWages + wagesofMonth;
+                totalWorkingHoursOfMonth = totalWorkingHoursOfMonth + PART_TIME_HOURS;
                 break;
             case IS_FULL_TIME:
                 System.out.println("Day "+day+" present");
                 dailyWages = WAGE_PER_HOUR * FULL_DAY_HOURS;
                 System.out.println("Wages of the day: "+dailyWages);
                 wagesofMonth = dailyWages + wagesofMonth;
+                totalWorkingHoursOfMonth = totalWorkingHoursOfMonth + FULL_DAY_HOURS;
                 break;
             default:
                 System.out.println("Day "+day+" Absent");
@@ -37,6 +41,7 @@ public class EmployeeWage {
             day++;
             workingDay++;
         }
+        System.out.println("Total Working Hours of the month: "+totalWorkingHoursOfMonth);
         System.out.println("Wages of the month: "+wagesofMonth);
         System.out.println("Wages of the month: "+wagesofMonth);
     }
