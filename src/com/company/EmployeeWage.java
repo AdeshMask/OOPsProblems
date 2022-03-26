@@ -56,6 +56,7 @@ public class EmployeeWage {
             day++;
             workingDay++;
         }
+        System.out.println("");
         System.out.println("Company: "+companyName);
         System.out.println("Total Working Hours of the month: " + totalWorkingHoursOfMonth);
         System.out.println("Wages of the month: " + wagesofMonth);
