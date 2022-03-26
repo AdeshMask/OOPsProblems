@@ -1,8 +1,6 @@
 package com.company;
 
 public class EmployeeWage {
-
-
     public int totalWage;
     int wagesPerHour;
     int fullDayHours;
@@ -13,11 +11,11 @@ public class EmployeeWage {
     int workingHoursPeerMonth;
     String companyName;
 
-    public EmployeeWage(){
-
+    public EmployeeWage(){          //Default constructor
     }
-    public EmployeeWage(String companyName,int wagesPerHour,int fullDayHours,int partTimeHours,int workingDaysperMonth,int workingHoursPeerMonth) {
 
+    public EmployeeWage(String companyName,int wagesPerHour,int fullDayHours,int partTimeHours,int workingDaysperMonth,int workingHoursPeerMonth) {
+        //Parameterized constructor
         this.companyName = companyName;
         this.wagesPerHour = wagesPerHour;
         this.fullDayHours = fullDayHours;
@@ -56,11 +54,10 @@ public class EmployeeWage {
             day++;
             workingDay++;
         }
-        System.out.println("");
+        System.out.println();
         System.out.println("Company: "+companyName);
         System.out.println("Total Working Hours of the month: " + totalWorkingHoursOfMonth);
         System.out.println("Wages of the month: " + wagesofMonth);
-        //System.out.println("Wages of the month: " + wagesofMonth);
     }
 
     public static void main(String[] args) {
